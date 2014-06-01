@@ -1,0 +1,27 @@
+{
+  "name": "LogoQuiz",
+  "version": "0.0.0",
+  "description": "This is logo quiz game for smartphone",
+  "main": "boilerplate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://arvin09@github.com/arvin09/LogoQuiz.git"
+  },
+  "keywords": [
+    "Logo",
+    "Quiz"
+  ],
+  "author": "Arvin S Waghmare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arvin09/LogoQuiz/issues"
+  },
+  "homepage": "https://github.com/arvin09/LogoQuiz",
+  "devDependencies": {
+    "connect": "^2.18.0"
+  }
+}
