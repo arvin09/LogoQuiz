@@ -37,6 +37,6 @@ var quiz = require('js/logoquiz');
 	}
 
 
-	var logoquiz = new quiz(this.logoData);
+	var logoquiz = new quiz(logoData);
 	logoquiz.init();
 });

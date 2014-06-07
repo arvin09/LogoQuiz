@@ -14,10 +14,8 @@ define(function(require){
 		},
 
 		renderApp : function(){
-			$('.app-container').html(Handlebars.compile(gridTmplt)())
+			$('.app-container').html(Handlebars.compile(gridTmplt)(this.logoData));
 		}
-
-
 	};
 
 	return Logoquiz;
