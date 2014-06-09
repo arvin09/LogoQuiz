@@ -1,4 +1,21 @@
 .grid-cell{
-	border: 1px solid;
+/* 	border: 1px solid; */
 	height: 100px;
+	text-align: center;
+	padding: 5px;
+}
+
+.grid-container{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	top:50px;
+}
+
+.grid-image{
+	max-height: 72px;
+	height: 72px;
+}
+
+.grid-image img{
+	height: 72px;
 }

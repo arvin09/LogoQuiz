@@ -2744,3 +2744,11 @@ var __module0__ = (function(__dependency1__, __dependency2__, __dependency3__, _
 
   return __module0__;
 })();
+
+Handlebars.registerHelper('showStars', function(count) {
+	  var str = "";
+	  for(var i=0;i<count;i++){
+		  str+= '<img src="app/images/small/difcul.jpg" height="13px" width="13px">';
+	  }
+	  return new Handlebars.SafeString(str);
+});
