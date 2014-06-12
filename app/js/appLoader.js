@@ -4,225 +4,211 @@ define(function(require){
 	var logoData = {
 			logos : [
 			         {
+			        	 id :'1',
 			        	 name: 'logo1',
-			        	 image:'',
 			        	 star:1,
-			        	 ans : 'starbucks'		
+			        	 ans : 'starbucks',
+			        	 done : false
 			         },
-
+			         
 			         {
+			        	 id : '2',
 			        	 name: 'logo2',
-			        	 image:'',
 			        	 star:2,
-			        	 ans : '3mobile'
+			        	 ans : '3mobile',
+			             done : false
 			         },
 
 			         {
+			        	 id: '3',
 			        	 name: 'logo3',
-			        	 image:'',
 			        	 star:1,
-			        	 ans:'logitech'
+			        	 ans:'logitech',
+			             done : false
 			         },
 
 			         {
+			        	 id: '4',
 			        	 name: 'logo4',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'volkswagen'
+			        	 ans:'volkswagen',
+			             done : false
 			         },
 
 			         {
+			        	 id: '5',
 			        	 name: 'logo5',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'network'
+			        	 ans:'network',
+			             done : false
 			         },
 
 			         {
+			        	 id: '6',
 			        	 name: 'logo6',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'adidas'
+			        	 ans:'adidas',
+			             done : false
 			         },
 			         {
+			        	 id: '7',
 			        	 name: 'logo7',
-			        	 image:'',
 			        	 star: 2,
-			        	 ans : 'mozilla firefox'
+			        	 ans : 'mozilla firefox',
+			             done : false
 			         },
-			         {
+			         {	 id: '8',
 			        	 name: 'logo1',
-			        	 image:'',
 			        	 star:1,
-			        	 ans : 'starbucks'		
+			        	 ans : 'starbucks',
+			        	 done : false
 			         },
 
 			         {
+			        	 id: '9',
 			        	 name: 'logo2',
-			        	 image:'',
 			        	 star:2,
-			        	 ans : '3mobile'
+			        	 ans : '3mobile',
+			             done : false
 			         },
 
 			         {
+			        	 id: '10',
 			        	 name: 'logo3',
-			        	 image:'',
 			        	 star:1,
-			        	 ans:'logitech'
+			        	 ans:'logitech',
+			             done : false
 			         },
 
 			         {
+			        	 id: '11',
 			        	 name: 'logo4',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'volkswagen'
+			        	 ans:'volkswagen',
+			             done : false
 			         },
 
 			         {
+			        	 id: '12',
 			        	 name: 'logo5',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'network'
+			        	 ans:'network',
+			             done : false
 			         },
 
 			         {
+			        	 id: '13',
 			        	 name: 'logo6',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'adidas'
+			        	 ans:'adidas',
+			             done : false
 			         },
 			         {
+			        	 id: '14',
 			        	 name: 'logo7',
-			        	 image:'',
 			        	 star: 2,
-			        	 ans : 'mozilla firefox'
+			        	 ans : 'mozilla firefox',
+			             done : false
 			         },			         {
+			        	 id: '15',
 			        	 name: 'logo1',
-			        	 image:'',
 			        	 star:1,
-			        	 ans : 'starbucks'		
+			        	 ans : 'starbucks',
+			        	 done : false
 			         },
 
 			         {
+			        	 id: '16',
 			        	 name: 'logo2',
-			        	 image:'',
 			        	 star:2,
-			        	 ans : '3mobile'
+			        	 ans : '3mobile',
+			             done : false
 			         },
 
 			         {
+			        	 id: '17',
 			        	 name: 'logo3',
-			        	 image:'',
 			        	 star:1,
-			        	 ans:'logitech'
+			        	 ans:'logitech',
+			             done : false
 			         },
 
 			         {
+			        	 id: '18',
 			        	 name: 'logo4',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'volkswagen'
+			        	 ans:'volkswagen',
+			             done : false
 			         },
 
 			         {
+			        	 id: '19',
 			        	 name: 'logo5',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'network'
+			        	 ans:'network',
+			             done : false
 			         },
 
 			         {
+			        	 id: '20',
 			        	 name: 'logo6',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'adidas'
+			        	 ans:'adidas',
+			             done : false
 			         },
 			         {
+			        	 id: '21',
 			        	 name: 'logo7',
-			        	 image:'',
 			        	 star: 2,
-			        	 ans : 'mozilla firefox'
+			        	 ans : 'mozilla firefox',
+			             done : false
 			         },			         {
+			        	 id: '22',
 			        	 name: 'logo1',
-			        	 image:'',
 			        	 star:1,
-			        	 ans : 'starbucks'		
+			        	 ans : 'starbucks',
+			        	 done : false
 			         },
 
 			         {
+			        	 id: '23',
 			        	 name: 'logo2',
-			        	 image:'',
 			        	 star:2,
-			        	 ans : '3mobile'
+			        	 ans : '3mobile',
+			             done : false
 			         },
 
 			         {
+			        	 id: '24',
 			        	 name: 'logo3',
-			        	 image:'',
 			        	 star:1,
-			        	 ans:'logitech'
+			        	 ans:'logitech',
+			             done : false
 			         },
 
 			         {
+			        	 id: '25',
 			        	 name: 'logo4',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'volkswagen'
+			        	 ans:'volkswagen',
+			             done : false
 			         },
 
 			         {
+			        	 id: '26',
 			        	 name: 'logo5',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'network'
+			        	 ans:'network',
+			             done : false
 			         },
 
 			         {
+			        	 id: '27',
 			        	 name: 'logo6',
-			        	 image:'',
 			        	 star:3,
-			        	 ans:'adidas'
-			         },
-			         {
-			        	 name: 'logo7',
-			        	 image:'',
-			        	 star: 2,
-			        	 ans : 'mozilla firefox'
-			         },			         {
-			        	 name: 'logo1',
-			        	 image:'',
-			        	 star:1,
-			        	 ans : 'starbucks'		
-			         },
-
-			         {
-			        	 name: 'logo2',
-			        	 image:'',
-			        	 star:2,
-			        	 ans : '3mobile'
-			         },
-
-			         {
-			        	 name: 'logo3',
-			        	 image:'',
-			        	 star:1,
-			        	 ans:'logitech'
-			         },
-
-			         {
-			        	 name: 'logo4',
-			        	 image:'',
-			        	 star:3,
-			        	 ans:'volkswagen'
-			         },
-
-			         {
-			        	 name: 'logo5',
-			        	 image:'',
-			        	 star:3,
-			        	 ans:'network'
-			         }	
-			         ]
+			        	 ans:'adidas',
+			             done : false
+			         }			         ]
 	};
 
 

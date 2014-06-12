@@ -1,14 +1,14 @@
 <div class="row">
 	{{#each logos}}
-	<div class="small-4 columns grid-cell" data-name="{{this.name}}" data-ans="{{this.ans}}">
+	<div class="small-4 columns grid-cell" data-name="{{this.name}}" data-ans="{{this.ans}}" data-id="{{this.id}}" data-status="{{this.done}}">
 		<div class="grid-image">
 			<img alt="" src="app/images/small/{{this.name}}.jpg">
 		</div>
 		<div>
 			<span>
-				{{showStars this.star}}
+				{{showStars this.star this.done}}
 			</span>
 		</div>
 	</div>
 	{{/each}}
-</div>
+</div> 

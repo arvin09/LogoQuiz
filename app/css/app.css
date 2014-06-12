@@ -20,8 +20,53 @@
 	height:100%;
 }
 
+.showans{
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	top:10px;
+}
+
 .ans{
 	padding-left: 0px!important;
 	padding-top: 30px;
 }
+
+.shakeit{
+	-webkit-animation:shakeAnimation 0.8s linear 0s;
+}
+
+@-webkit-keyframes shakeAnimation{
+	0% { -webkit-transform: translate(10px)}
+	10% { -webkit-transform: translate(-7px)}
+	20% { -webkit-transform: translate(-8px)}
+	30% { -webkit-transform: translate(6px)}
+	40% { -webkit-transform: translate(8px)}
+	50% { -webkit-transform: translate(-8px)}
+	60% { -webkit-transform: translate(-10px)}
+	70% { -webkit-transform: translate(8px)}
+	80% { -webkit-transform: translate(-8px)}
+	90% { -webkit-transform: translate(8px)}
+	100% { -webkit-transform: translate(1px)}
+}
+
+
+.jumpit{
+	-webkit-animation:jumpAnimation 0.8s linear infinite 0s;
+}
+
+@-webkit-keyframes jumpAnimation{
+	0% { -webkit-transform: translate(0,10px)}
+	10% { -webkit-transform: translate(0,-7px)}
+	20% { -webkit-transform: translate(0,-8px)}
+	30% { -webkit-transform: translate(0,6px)}
+	40% { -webkit-transform: translate(0,8px)}
+	50% { -webkit-transform: translate(0,-8px)}
+	60% { -webkit-transform: translate(0,-10px)}
+	70% { -webkit-transform: translate(0,8px)}
+	80% { -webkit-transform: translate(0,-8px)}
+	90% { -webkit-transform: translate(0,8px)}
+	100% { -webkit-transform: translate(0,1px)}
+}
+
 
