@@ -52,7 +52,7 @@
 
 
 .jumpit{
-	-webkit-animation:jumpAnimation 0.8s linear infinite 0s;
+	-webkit-animation:jumpAnimation 0.8s linear 0s;
 }
 
 @-webkit-keyframes jumpAnimation{
