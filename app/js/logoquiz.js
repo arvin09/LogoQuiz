@@ -3,6 +3,7 @@ define(function(require){
 	var handlebars = require('handlebars');
 	var gridTmplt = require('text!html/grid.html');
 	var logoTmplt = require('text!html/logo.html');
+	var introTmplt = require('text!html/intro.html');
 
 	var Logoquiz = function(obj){
 		if(localStorage.getItem('logos') !== null){
@@ -26,10 +27,15 @@ define(function(require){
 	
 	Logoquiz.prototype = {
 		init: function(){
-			this.renderApp();
-			this.addGridCellEvent();
-			this.goBack();
-			this.checkAns();
+			this.renderIntro();
+//			this.renderApp();
+//			this.addGridCellEvent();
+//			this.goBack();
+//			this.checkAns();
+		},
+		
+		renderIntro : function(){
+			$('.intro').html(Handlebars.compile(introTmplt)());
 		},
 
 		renderApp : function(){
