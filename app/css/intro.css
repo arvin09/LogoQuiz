@@ -1,0 +1,43 @@
+@font-face{
+	font-family: 'Lemon';
+	src: url('../fonts/Lemon-Regular.ttf') 
+}
+
+.intro-logo{
+	top: -10px;
+}
+
+.intro{
+	//padding-top:20px;
+	padding-left: 15px;
+}
+
+.intro-play{
+	text-align: center;
+}
+
+.intro-social-message{
+	height:30px;
+	text-align: center;
+}
+
+.intro-share-section{
+	position:fixed;
+	margin-top:10px;
+	bottom: 1%;
+	left:0%
+}
+
+.intro-share-section button{
+	margin-bottom:10px;
+}
+
+.remove-spacing{
+	margin:0;
+	padding-left:2px;
+	padding-right:2px;
+}
+
+.padding-2px{
+	margin:2px;
+}
