@@ -2,35 +2,51 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="Logo Quiz for smartphone">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+<meta name="description" content="Logo Quiz for smartphone">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="app/css/normalize.css">
-        <link rel="stylesheet" href="app/css/foundation.css">
-        <link rel="stylesheet" href="app/css/app.css">
-        <link rel="stylesheet" href="app/css/intro.css">
-        <link rel="stylesheet" href="app/css/grid.css">
-        <link rel="stylesheet" href="app/css/zocial.css">
-        <script src="app/static-resources/modernizr/modernizr-2.6.2.min.js"></script>
+<link rel="stylesheet" href="app/css/normalize.css">
+<link rel="stylesheet" href="app/css/foundation.css">
+<link rel="stylesheet"
+	href="app/css/foundation-icon/foundation-icons.css">
+<link rel="stylesheet" href="app/css/app.css">
+<link rel="stylesheet" href="app/css/intro.css">
+<link rel="stylesheet" href="app/css/level.css">
+<link rel="stylesheet" href="app/css/grid.css">
+<link rel="stylesheet" href="app/css/zocial.css">
+<script src="app/static-resources/modernizr/modernizr-2.6.2.min.js"></script>
 
-    </head>
-    <body>
-        
-        <!-- Add your site or application content here -->
-        <div class="app-container">
-        	 <div class="intro small-12 columns"></div>
-        	<div class="levels small-12 columns"></div>
-            <!--<div class="header small-12 columns">Level 1</div>
-        	<div class="grid-container small-12 columns"></div> -->
-        </div>
-        <script type="text/javascript" src="boilerplate.js"></script>
-        <script type="text/javascript" src="app/static-resources/require/require.js"></script>
-    </body>
+</head>
+<body>
+
+	<!-- Add your site or application content here -->
+	<div class="app-container">
+		<div class="intro small-12 columns"></div>
+		<div class="levels small-12 columns"></div>
+		<div class="grid-container small-12 columns">
+			<div class="zocial header small-12 columns">
+				<div class="small-4 columns nav-back-btn">
+					<a href="#level"><i class="fi-arrow-left large nav-btn"></i></a>
+				</div>
+				<div class="small-4 columns padding-0px">Level 1</div>
+				<div class="small-4 columns nav-home-btn">
+					<a href="#menu"><i class="fi-home large home-btn"></i></a>
+				</div>
+			</div>
+			<div class="logo-container"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="boilerplate.js"></script>
+	<script type="text/javascript"
+		src="app/static-resources/require/require.js"></script>
+</body>
 </html>

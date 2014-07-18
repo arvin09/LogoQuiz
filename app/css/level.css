@@ -1,0 +1,69 @@
+.levels {
+	background: -webkit-linear-gradient(top, #0D3C53 0%, #135A8B 9%, #2787B6 50%,
+		#173E58 82%, #184D74 87%, #101A24 100%);
+	border: 2px dashed;
+	display:none;
+	
+}
+
+.level-container {
+	position: relative;
+	padding-top: 50px;
+}
+
+.level-header-title{
+	font-family:"Lemon";
+	font-size:30px;
+	line-height:45px;
+	margin:auto;
+	text-align: left;
+}
+
+.level-header {
+	background: rgb(255, 194, 2);
+	height: 3em;
+	position: fixed !important;
+	border-radius:0 !important;
+	border-bottom-right-radius: 1em !important;
+	border-bottom-left-radius: 1em !important;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	border: none !important;
+}
+
+.level-info {
+	height: auto;
+	background-color: red;
+	background-repeat: repeat-y;
+	border-radius: 0.8em;
+	margin-top: 1em;
+	padding: 1em;
+	border-radius: 1em !important;
+	font-family: "Lemon";
+}
+
+.levle-progress {
+	text-align: center;
+}
+
+.level-title {
+	font-family: "Lemon";
+	font-weight: 20px;
+	text-align: left !important;
+}
+
+.level-details {
+	font-family: "Lemon";
+	font-weight: 1.5em;
+}
+
+.level-status {
+	font-family: "Lemon";
+	/* text-align: left !important; */
+	font-weight: 1.5em;
+}
+
+progress {
+	width: 90%;
+}

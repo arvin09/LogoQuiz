@@ -37,9 +37,9 @@ a.zocial {
 	
 	position: relative;
 	
-	-moz-border-radius: .3em;
-	-webkit-border-radius: .3em;
-	border-radius: .3em;
+	-moz-border-radius: .2em;
+	-webkit-border-radius: .2em;
+	border-radius: .2em;
 }
 
 .zocial:before {
@@ -90,15 +90,22 @@ a.zocial {
 /* Gradients */
 
 .zocial {
-	background-image: -moz-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
+	/* background-image: -moz-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
 	background-image: -ms-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
 	background-image: -o-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.1)), color-stop(49%, rgba(255,255,255,.05)), color-stop(51%, rgba(0,0,0,.05)), to(rgba(0,0,0,.1)));
 	background-image: -webkit-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
-	background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
+	background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1)); */
+	
+	background-image: -moz-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+	background-image: -ms-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+	background-image: -o-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.15)), color-stop(49%, rgba(255,255,255,.15)), color-stop(51%, rgba(0,0,0,.1)), to(rgba(0,0,0,.15)));
+	background-image: -webkit-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
+	background-image: linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
 }
 
-.zocial:hover, .zocial:focus {
+/* .zocial:hover, .zocial:focus {
 	background-image: -moz-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
 	background-image: -ms-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
 	background-image: -o-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
@@ -114,7 +121,7 @@ a.zocial {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.1)), color-stop(30%, rgba(255,255,255,0)), color-stop(50%, transparent), to(rgba(0,0,0,.1)));
 	background-image: -webkit-linear-gradient(bottom, rgba(255,255,255,.1), rgba(255,255,255,0) 30%, transparent 50%, rgba(0,0,0,.1));
 	background-image: linear-gradient(bottom, rgba(255,255,255,.1), rgba(255,255,255,0) 30%, transparent 50%, rgba(0,0,0,.1));
-}
+} */
 
 /* Adjustments for light background buttons */
 
@@ -355,9 +362,9 @@ a.zocial {
 .zocial.cart {background-color: #333;}
 .zocial.chrome {background-color: #006cd4;}
 .zocial.cloudapp {background-color: #fff; color: #312c2a;}
-.zocial.custom-red {background-color: #EC390C; width:100%; height:140px; font-family: "Lemon";padding-right: 0;font-size: 23px;}
-.zocial.custom-blue {background-color: #0699E0; width:100%; height:140px; font-family: "Lemon";padding-right: 0;font-size: 23px;}
-.zocial.custom-green {background-color: #9CCC22; width:100%; height:140px; font-family: "Lemon";padding-right: 0;font-size: 23px;}
+.zocial.custom-red {background-color: #FC0202; width:100%; height:140px; font-family: "Lemon";padding-right: 0;font-size: 23px;}
+.zocial.custom-blue {background-color: #00ACFF; width:100%; height:140px; font-family: "Lemon";padding-right: 0;font-size: 23px;}
+.zocial.custom-green {background-color: #A2F60D; width:100%; height:140px; font-family: "Lemon";padding-right: 0;font-size: 23px;}
 .zocial.custom-white {background-color: #FCB602; width:100%; height:140px; font-family: "Lemon";padding-right: 0;font-size: 23px;}
 .zocial.custom-header {background-color: #FF5403; width:100%; height:70px; font-family: "Lemon"; font-size: 38px;padding-right: 0;}
 .zocial.creativecommons {background-color: #000;}

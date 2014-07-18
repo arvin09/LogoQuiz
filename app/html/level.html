@@ -1,0 +1,22 @@
+<div class="small-12 columns level-header zocial">
+	<div class="small-4 columns nav-back-btn">
+		<a href="#menu"><i class="fi-arrow-left medium nav-btn"></i></a>
+	</div>
+	<div class="small-8 columns level-header-title padding-0px">Levels</div>
+</div>
+<div class="level-container">
+{{#each levels}}
+	<a href="#grid">
+		<div class="level-info small-12 columns zocial" style="background-color:{{this.bgcolor}}">
+			<div class="level-title small-12 columns">{{this.name}} </div>
+			<div class="level-details small-12 columns">Points {{this.pointScored}}</div>
+			<div class="levle-progress small-12 columns">
+				<progress value="80" max="100"></progress>
+			</div>
+			<div class="level-status small-12 columns">Completed {{this.completedCount}} of {{this.totalLogo}}</div>
+		</div>
+	</a>
+{{/each}}
+</div>
+
+
