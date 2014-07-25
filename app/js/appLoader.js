@@ -7,11 +7,11 @@ define(function(require){
 			        {
 			        	id:'1',
 			        	name:'Level 1',
-			        	pointScored: '30',
+			        	pointScored:'30',
 			        	completedCount:'10',
 			        	totalLogo:'30',
 			        	bgcolor:'red',
-			        	started:true,
+			        	unlock:true,
 			        },
 			        {
 
@@ -21,7 +21,8 @@ define(function(require){
 			        	completedCount:'10',
 			        	totalLogo:'30',
 			        	bgcolor:'rgb(3, 199, 226)',
-			        	started:true,
+			        	unlock:true,
+			        	
 			        },
 			        {
 			        	id:'3',
@@ -30,7 +31,7 @@ define(function(require){
 			        	completedCount:'10',
 			        	totalLogo:'30',
 			        	bgcolor:'rgb(160, 207, 9)',
-			        	started:true,
+			        	unlock:true,
 
 			        },
 			        {
@@ -40,7 +41,7 @@ define(function(require){
 			        	completedCount:'0',
 			        	totalLogo:'30',
 			        	bgcolor:'rgb(255, 112, 0)',
-			        	started:false,
+			        	unlock:false,
 			        },
 			        {
 			        	id:'5',
@@ -49,7 +50,7 @@ define(function(require){
 			        	completedCount:'0',
 			        	totalLogo:'30',
 			        	bgcolor:'rgb(129, 90, 41)',
-			        	started:false,
+			        	unlock:false,
 
 			        }
 			        ],

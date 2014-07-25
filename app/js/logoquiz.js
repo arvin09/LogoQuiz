@@ -32,8 +32,7 @@ define(function(require){
 			this.renderLevel();
 			this.renderApp();
 			this.addEventHandlers();
-			this.goBack();
-			this.checkAns();
+			this.loadLastLogo();
 			this.manageRouting();
 		},
 		
@@ -45,18 +44,22 @@ define(function(require){
 		},
 
 		renderApp : function(){
-			$('.logo-container').html(Handlebars.compile(gridTmplt)(this.logoData));
+			$('.grid').html(Handlebars.compile(gridTmplt)(this.logoData));
 		},
 		
 		addEventHandlers : function(){
 			var self = this;
-			$('.grid-container').on('click','.grid-cell',function(e){
+			$('.grid-container .grid').on('click','.grid-cell',function(e){
 				var currItem = {};
 				currItem.name = $(this).data("name");
 				currItem.ans = $(this).data("ans");
 				currItem.id = $(this).data("id");
 				currItem.status = $(this).data("status");
-				$('.logo-container').html(Handlebars.compile(logoTmplt)(currItem));
+				localStorage.setItem("currItem",JSON.stringify(currItem));
+				$('.logo').html(Handlebars.compile(logoTmplt)(currItem));
+				setTimeout(function(){
+					self.manageRouting();
+				},100);
 				e.stopPropagation();
 			});
 			
@@ -65,6 +68,33 @@ define(function(require){
 					self.manageRouting();
 				},100);
 			});
+			
+			$('.grid-container .logo').on('click','.checkbtn',function(e){
+				var itemName = $('.logodetail').data("ans");
+				var itemId = $('.logodetail').data("id");
+				var currAns = $('.anstext').val().toLowerCase();
+				if(itemName === currAns){
+					$('.result').html("<b>Great !!!</b>");
+					$('.logo-holder').addClass("jumpit");
+					self.updateData(itemId);
+				}
+				else{
+					if($('.logo-holder').hasClass('shakeit')){
+						$('.logo-holder').removeClass("shakeit");
+					}
+					setTimeout(function(){
+						$('.logo-holder').addClass("shakeit");
+					},100);
+					
+				}
+			});
+		},
+		
+		loadLastLogo : function(){
+			if(localStorage.getItem('currItem') !== null){
+				var currItem = JSON.parse(localStorage.getItem('currItem'));
+				$('.logo').html(Handlebars.compile(logoTmplt)(currItem));
+			}
 		},
 		
 		goLevel : function(){
@@ -89,69 +119,64 @@ define(function(require){
 		goQuiz : function(){
 			$('.intro').hide();
 			$('.levels').hide();
+			$('.grid-container .logo').hide();
 			$('.grid-container').show();
-			this.renderApp();
+			$('.grid-container .grid').show();
 			$('.grid-container').removeClass('entry_anim');
 			$('.grid-container').addClass('entry_anim');
-			$('.logo-container').removeClass('entry_anim1');
-			$('.logo-container').addClass('entry_anim1');
+			$('.grid-container .logo').removeClass('entry_anim1');
+			$('.grid-container .grid').addClass('entry_anim1');
 		},
 		
-
-		goBack : function(){
-			var self = this;
-			$('.grid-container').on('click','.backbtn',function(e){
-				self.renderApp();
-				e.stopPropagation();
-			});
+		goLogo : function(){
+			$('.intro').hide();
+			$('.levels').hide();
+			$('.grid-container .grid').hide();
+			$('.grid-container').show();
+			$('.grid-container .logo').show();
+			$('.grid-container').removeClass('entry_anim');
+			$('.grid-container').addClass('entry_anim');
+			$('.grid-container .grid').removeClass('entry_anim1');
+			$('.grid-container .logo').addClass('entry_anim1');
 		},
+		
 		
 		checkAns : function(){
 			var self = this;
-			$('.grid-container').on('click','.checkbtn',function(e){
-					var itemName = $('.logodetail').data("ans");
-					var itemId = $('.logodetail').data("id");
-					var currAns = $('.anstext').val().toLowerCase();
-					if(itemName === currAns){
-						$('.result').html("<b>Great !!!</b>");
-						$('.logo').addClass("jumpit");
-						self.updateData(itemId);
-					}
-					else{
-						if($('.logo').hasClass('shakeit')){
-							$('.logo').removeClass("shakeit");
-						}
-						setTimeout(function(){
-							$('.logo').addClass("shakeit");
-						},100);
-						
-					}
-			});
+			
 		},
 		
 		manageRouting : function(){
 			var route = window.location.hash;
-			console.log(route);
 			switch(route) {
-				case "#level":
+				case '#level':
+					this.updateBackNav("#intro");
 					this.goLevel();
 					break;
-				case "#grid":
+				case '#grid':
+					this.updateBackNav("#level");
 					this.goQuiz();
 					break;
-				case "#menu":
+				case '#menu':
 					this.goMenu();
 					break;
-					
+				case '#logo':
+					this.updateBackNav("#grid");
+					this.goLogo();
+					break;
 			}
+		},
+		
+		updateBackNav : function(str){
+			$('.back-nav').attr('href',str);
 		},
 		
 		updateData : function(itemId){
 			
 			$(this.logoData.logos).each(function(){
-					if(this.id == itemId){
-						this.done = true;
-					}
+				if(this.id == itemId){
+					this.done = true;
+				}
 			});
 			
 			localStorage.setItem("logos",JSON.stringify(this.logoData));

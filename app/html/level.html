@@ -6,6 +6,7 @@
 </div>
 <div class="level-container">
 {{#each levels}}
+{{#if this.unlock}}
 	<a href="#grid">
 		<div class="level-info small-12 columns zocial" style="background-color:{{this.bgcolor}}">
 			<div class="level-title small-12 columns">{{this.name}} </div>
@@ -16,6 +17,15 @@
 			<div class="level-status small-12 columns">Completed {{this.completedCount}} of {{this.totalLogo}}</div>
 		</div>
 	</a>
+{{else}}
+	<a href="#grid">
+		<div class="level-info small-12 columns zocial" style="background-color:{{this.bgcolor}}">
+			<div class="level-title small-12 columns">{{this.name}}  <li class="fi-lock large"></li></div>
+			<div class="level-details small-12 columns">Complete 10 more logos</div>
+			<div class="level-status small-12 columns"> to Unlock </div>
+		</div>
+	</a>
+{{/if}}
 {{/each}}
 </div>
 
