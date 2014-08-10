@@ -12,6 +12,7 @@ define(function(require){
 		}
 		else{
 			this.logoData = obj;
+			localStorage.setItem("logos",JSON.stringify(this.logoData));
 		}
 	};
 	
@@ -26,11 +27,29 @@ define(function(require){
 		  return new Handlebars.SafeString(str);
 	});
 	
+	Handlebars.registerHelper("showProgress", function(completed,total) {
+		  var perc = completed*100/total;
+		  return perc;
+	});
+	
+	Handlebars.registerHelper("calcStars", function(logos) {
+		  var totalStar = 0;
+		  for(var i=0;i<logos.length;i++){
+			  totalStar += logos[i].star;
+		  }
+		  return totalStar;
+	});
+	
+	Handlebars.registerHelper("getLogoToUnlock", function(status) {
+		  console.log(status);
+		  return 10;
+	});
+	
 	Logoquiz.prototype = {
 		init: function(){
+			this.currItem = {};
 			this.renderIntro();
 			this.renderLevel();
-			this.renderApp();
 			this.addEventHandlers();
 			this.loadLastLogo();
 			this.manageRouting();
@@ -44,26 +63,30 @@ define(function(require){
 		},
 
 		renderApp : function(){
-			$('.grid').html(Handlebars.compile(gridTmplt)(this.logoData));
+			$('.grid').html(Handlebars.compile(gridTmplt)(this.logoData.levels[this.currItem.level]));
 		},
 		
 		addEventHandlers : function(){
 			var self = this;
 			$('.grid-container .grid').on('click','.grid-cell',function(e){
-				var currItem = {};
-				currItem.name = $(this).data("name");
-				currItem.ans = $(this).data("ans");
-				currItem.id = $(this).data("id");
-				currItem.status = $(this).data("status");
-				localStorage.setItem("currItem",JSON.stringify(currItem));
-				$('.logo').html(Handlebars.compile(logoTmplt)(currItem));
+				
+				self.currItem.name = $(this).data("name");
+				self.currItem.ans = $(this).data("ans");
+				self.currItem.id = $(this).data("id");
+				self.currItem.status = $(this).data("status");
+				localStorage.setItem("currItem",JSON.stringify(self.currItem));
+				$('.logo').html(Handlebars.compile(logoTmplt)(self.currItem));
 				setTimeout(function(){
 					self.manageRouting();
 				},100);
 				e.stopPropagation();
 			});
 			
-			$('.app-container').on('click','a',function(){
+			$('.app-container').on('click','a',function(e){
+				var levelId = $(e.currentTarget).find('div').first().data('id');
+				if(e.currentTarget.hash === "#grid" && levelId){
+					self.currItem.level = parseInt($(e.currentTarget).find('div').first().data('id'))-1;
+				}
 				setTimeout(function(){
 					self.manageRouting();
 				},100);
@@ -76,6 +99,8 @@ define(function(require){
 				if(itemName === currAns){
 					$('.result').html("<b>Great !!!</b>");
 					$('.logo-holder').addClass("jumpit");
+					$(this).css('display','none');
+					$('input').attr('disabled','disabled');
 					self.updateData(itemId);
 				}
 				else{
@@ -92,12 +117,13 @@ define(function(require){
 		
 		loadLastLogo : function(){
 			if(localStorage.getItem('currItem') !== null){
-				var currItem = JSON.parse(localStorage.getItem('currItem'));
-				$('.logo').html(Handlebars.compile(logoTmplt)(currItem));
+				this.currItem = JSON.parse(localStorage.getItem('currItem'));
+				$('.logo').html(Handlebars.compile(logoTmplt)(this.currItem));
 			}
 		},
 		
 		goLevel : function(){
+			this.renderLevel();
 			$('.intro').hide();
 			$('.levels').show();
 			$('.grid-container').hide();
@@ -117,6 +143,7 @@ define(function(require){
 		
 		
 		goQuiz : function(){
+			this.renderApp();
 			$('.intro').hide();
 			$('.levels').hide();
 			$('.grid-container .logo').hide();
@@ -138,12 +165,6 @@ define(function(require){
 			$('.grid-container').addClass('entry_anim');
 			$('.grid-container .grid').removeClass('entry_anim1');
 			$('.grid-container .logo').addClass('entry_anim1');
-		},
-		
-		
-		checkAns : function(){
-			var self = this;
-			
 		},
 		
 		manageRouting : function(){
@@ -172,14 +193,30 @@ define(function(require){
 		},
 		
 		updateData : function(itemId){
-			
-			$(this.logoData.logos).each(function(){
+			var self = this;
+			$(this.logoData.levels[this.currItem.level].logos).each(function(){
 				if(this.id == itemId){
 					this.done = true;
+					self.logoData.levels[self.currItem.level].pointScored += this.star;
+					self.logoData.levels[self.currItem.level].completedCount++;
+					self.logoData.status.totalCompleted++;
+					return false;
 				}
 			});
 			
-			localStorage.setItem("logos",JSON.stringify(this.logoData));
+			$(this.logoData.levels).each(function(i){
+				if(!self.logoData.levels[i].unlock){
+					if(self.logoData.status.totalCompleted < self.logoData.levels[i].logoToUnlock){
+						self.logoData.levels[i].remainToUnlock = self.logoData.levels[i].logoToUnlock - self.logoData.status.totalCompleted;
+						console.log("Level "+ i + " Total "+ self.logoData.status.totalCompleted + " Remain " + self.logoData.levels[i].remainToUnlock)
+					}
+					else{
+						self.logoData.levels[i].unlock = true;
+					}
+				}
+			});
+			
+			localStorage.setItem("logos",JSON.stringify(self.logoData));
 		}
 	};
 

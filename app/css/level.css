@@ -50,7 +50,7 @@
 .level-title {
 	font-family: "Lemon";
 	font-weight: 20px;
-	text-align: left !important;
+	/* text-align: left !important; */
 }
 
 .level-details {

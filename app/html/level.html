@@ -8,23 +8,22 @@
 {{#each levels}}
 {{#if this.unlock}}
 	<a href="#grid">
-		<div class="level-info small-12 columns zocial" style="background-color:{{this.bgcolor}}">
+		<div class="level-info small-12 columns zocial" data-id={{this.id}} style="background-color:{{this.bgcolor}}">
 			<div class="level-title small-12 columns">{{this.name}} </div>
-			<div class="level-details small-12 columns">Points {{this.pointScored}}</div>
+			<div class="level-details small-12 columns">Points {{this.pointScored}} / {{calcStars this.logos}}</div>
 			<div class="levle-progress small-12 columns">
-				<progress value="80" max="100"></progress>
+				<progress value="{{showProgress this.completedCount this.totalLogo}}" max="100"></progress>
 			</div>
 			<div class="level-status small-12 columns">Completed {{this.completedCount}} of {{this.totalLogo}}</div>
 		</div>
 	</a>
 {{else}}
-	<a href="#grid">
+	
 		<div class="level-info small-12 columns zocial" style="background-color:{{this.bgcolor}}">
-			<div class="level-title small-12 columns">{{this.name}}  <li class="fi-lock large"></li></div>
-			<div class="level-details small-12 columns">Complete 10 more logos</div>
-			<div class="level-status small-12 columns"> to Unlock </div>
+			<div class="level-title small-12 columns"><span class="fi-lock lockIco"></span>{{this.name}}</div>
+			<div class="level-details small-12 columns">Answer {{this.remainToUnlock}} more logos</div>
+			<div class="level-status small-12 columns"> to unlock </div>
 		</div>
-	</a>
 {{/if}}
 {{/each}}
 </div>
