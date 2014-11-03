@@ -302,3 +302,7 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+.nowrap{
+	white-space: nowrap;
+}

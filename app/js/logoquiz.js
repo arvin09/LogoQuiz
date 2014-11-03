@@ -5,6 +5,7 @@ define(function(require){
 	var logoTmplt = require('text!html/logo.html');
 	var introTmplt = require('text!html/intro.html');
 	var levelTmplt = require('text!html/level.html');
+	var statsTmplt = require('text!html/statistics.html');
 
 	var Logoquiz = function(obj){
 		if(localStorage.getItem('logos') !== null){
@@ -65,6 +66,10 @@ define(function(require){
 		renderApp : function(){
 			$('.grid').html(Handlebars.compile(gridTmplt)(this.logoData.levels[this.currItem.level]));
 		},
+		renderStats : function(){
+			$('.statistics').html(Handlebars.compile(statsTmplt)());
+		},
+		
 		
 		addEventHandlers : function(){
 			var self = this;
@@ -125,6 +130,7 @@ define(function(require){
 		goLevel : function(){
 			this.renderLevel();
 			$('.intro').hide();
+			$('.statistics').hide();
 			$('.levels').show();
 			$('.grid-container').hide();
 			$('.levels').removeClass('entry_anim');
@@ -136,16 +142,28 @@ define(function(require){
 		goMenu : function(){
 			$('.intro').show();
 			$('.levels').hide();
+			$('.statistics').hide();
 			$('.grid-container').hide();
 			$('.intro').removeClass('entry_anim');
 			$('.intro').addClass('entry_anim');
 		},
 		
 		
+		goStats : function(){
+			this.renderStats();
+			$('.intro').hide();
+			$('.levels').hide();
+			$('.grid-container').hide();
+			$('.statistics').show();
+			$('.statistics').removeClass('entry_anim');
+			$('.statistics').addClass('entry_anim');
+		},
+		
 		goQuiz : function(){
 			this.renderApp();
 			$('.intro').hide();
 			$('.levels').hide();
+			$('.statistics').hide();
 			$('.grid-container .logo').hide();
 			$('.grid-container').show();
 			$('.grid-container .grid').show();
@@ -158,6 +176,7 @@ define(function(require){
 		goLogo : function(){
 			$('.intro').hide();
 			$('.levels').hide();
+			$('.statistics').hide();
 			$('.grid-container .grid').hide();
 			$('.grid-container').show();
 			$('.grid-container .logo').show();
@@ -177,6 +196,9 @@ define(function(require){
 				case '#grid':
 					this.updateBackNav("#level");
 					this.goQuiz();
+					break;
+				case '#stats':
+					this.goStats();
 					break;
 				case '#menu':
 					this.goMenu();

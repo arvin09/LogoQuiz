@@ -6,7 +6,7 @@
 	
 }
 
-.level-container {
+.level-container, .stats-container{
 	position: relative;
 	padding-top: 50px;
 }
@@ -66,4 +66,21 @@
 
 progress {
 	width: 90%;
+}
+
+.nowrap{
+	white-space: nowrap;
+}
+
+.detial-header{
+	font-family: "Lemon";
+	font-weight: 1.5em;
+	line-height: 3em;
+	color: white;
+}
+
+.details{
+	font-weight: 1em;
+	line-height: 2em;
+	color : white;
 }

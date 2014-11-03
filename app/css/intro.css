@@ -7,10 +7,9 @@
 	top: -20px;
 }
 
-.intro{
+.intro, .statistics{
 	padding-left: 15px;
 	background: -webkit-linear-gradient(top, #0D3C53 0%,#135A8B 9%,#2787B6 50%,#173E58 82%,#184D74 87%,#101A24 100%);
-	border: 2px dashed;
 	height: 100%;
 }
 
